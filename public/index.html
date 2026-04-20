@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Website</title>
+</head>
+<body>
+    <h1>Dynamic Website 🚀</h1>
+    <button onclick="getData()">Get Server Time</button>
+
+    <p id="output"></p>
+
+    <script>
+        async function getData() {
+            const res = await fetch('/api/time');
+            const data = await res.json();
+            document.getElementById("output").innerText =
+                data.message + " | " + data.time;
+        }
+    </script>
+</body>
+</html>
